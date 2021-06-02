@@ -1,23 +1,38 @@
 package com.nextlabpear.basesimple.data;
 
-public class Node {
+public class Node<E> {
 
-    private Node next;
-    private int data;
+    private Node<E> next;
+    private E data;
 
-    public Node getNext() {
-        return next;
-    }
-
-    public int getData() {
-        return data;
-    }
-
-    public void setNext(Node next) {
+    Node(E data){
+        this.data = data;
         this.next = next;
     }
 
-    public void setData(int data) {
+    public Node<E> getNext() {
+        return next;
+    }
+
+    public E getData() {
+        return data;
+    }
+
+    public void setNext(Node<E> next) {
+        this.next = next;
+    }
+
+    public void setData(E data) {
         this.data = data;
+    }
+
+    public Node<E> clone(){
+        Node<E> node = null;
+        try{
+            node = (Node<E>)super.clone();
+        }catch (Exception ex){
+
+        }
+        return node;
     }
 }
